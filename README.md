@@ -1,6 +1,6 @@
 # overflow-menu
 
-An element providing a starting point for your own reusable Polymer elements.
+An element providing a drop-down overflow menu when provided with a list of items
 
 
 ## Dependencies

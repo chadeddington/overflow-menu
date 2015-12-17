@@ -21,32 +21,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </head>
   <body>
 
+    <button id="someId">Button</button>
+
     <!-- You can use the document as a place to set up your fixtures. -->
-    <overflow-menu></overflow-menu>
+    <overflow-menu target='someId'></overflow-menu>
 
     <script>
       var myEl = document.querySelector('overflow-menu');
 
       suite('<overflow-menu>', function() {
 
-        test('defines the "author" property', function() {
-          assert.equal(myEl.author.name, 'Dimitri Glazkov');
-          assert.equal(myEl.author.image, 'http://addyosmani.com/blog/wp-content/uploads/2013/04/unicorn.jpg');
+        test('defines the dropPosition', function() {
+          assert.equal(myEl.dropPosition, 'left');
         });
 
-        test('says hello', function() {
-          assert.equal(myEl.sayHello(), 'overflow-menu says, Hello World!');
-
-          var greetings = myEl.sayHello('greetings Earthlings');
-          assert.equal(greetings, 'overflow-menu says, greetings Earthlings');
+        test('defines the target', function() {
+          assert.equal(myEl.target, document.querySelector("#someId").id);
         });
 
-        test('fires lasers', function(done) {
-          myEl.addEventListener('overflow-menu-lasers', function(event) {
-            assert.equal(event.detail.sound, 'Pew pew!');
-            done();
-          });
-          myEl.fireLasers();
+        test('Check for positiong', function() {
+          assert.typeOf(myEl.positionMenu, 'function');
         });
 
       });
