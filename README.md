@@ -1,6 +1,6 @@
 # overflow-menu
 
-An element providing a drop-down overflow menu when provided with a list of items
+An element providing a drop-down overflow menu. To position the overflow menu it will need to have a target element set to it's target property.
 
 
 ## Dependencies

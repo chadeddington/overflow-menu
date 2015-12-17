@@ -10,11 +10,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../polymer/polymer.html">
 
 <!--
-An element providing a drop-down overflow menu when provided with a list of items
+An element providing a drop-down overflow menu.
 
 Example:
 
-    <overflow-menu target='someId' drop-direction='right'>
+    <overflow-menu target='{{someElement}}' drop-direction='right'>
       <ul>
         <li>Item 1</li>
         <li>Item 2</li>
@@ -59,7 +59,7 @@ Example:
        * appear under
        */
        target: {
-        type: String,
+        type: Object,
         value: null
        },
 
@@ -83,8 +83,8 @@ Example:
       //
       // This is the point where you should make modifications to the DOM (when
       // necessary), or kick off any processes the element wants to perform.
-      this.positionMenu();
-      window.addEventListener('resize', this.positionMenu.bind(this));
+      this.listen(window, 'resize', 'positionMenu');
+      // window.addEventListener('resize', this.positionMenu.bind(this));
     },
 
     attached: function() {
@@ -94,6 +94,9 @@ Example:
       // This is a good place to perform any work related to your element's
       // visual state or active behavior (measuring sizes, beginning animations,
       // loading resources, etc).
+      this.async(function() {
+        this.positionMenu();
+      })
     },
 
     detached: function() {
@@ -106,8 +109,8 @@ Example:
     // This positions the overflow menu
     positionMenu: function() {
       if (!this.target) return;
-      setTimeout(function() {
-        var theTarget = document.getElementById(this.target);
+      // setTimeout(function() {
+        var theTarget = this.target;
         if (this.dropPosition === "right") {
           var self = document.querySelector('.overflow-menu');
           this.style.left = theTarget.getBoundingClientRect().left - self.offsetWidth + theTarget.offsetWidth + "px";
@@ -118,7 +121,7 @@ Example:
         }
         
         this.style.top = theTarget.getBoundingClientRect().bottom + 20 + "px";
-      }.bind(this), 0);
+      // }.bind(this), 0);
       
     }
     

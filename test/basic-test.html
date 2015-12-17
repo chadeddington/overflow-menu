@@ -24,9 +24,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <button id="someId">Button</button>
 
     <!-- You can use the document as a place to set up your fixtures. -->
-    <overflow-menu target='someId'></overflow-menu>
+    <overflow-menu id='menu'></overflow-menu>
 
     <script>
+      (function() {
+        document.querySelector('#menu').target = document.querySelector("#someId");
+      })();
+      
       var myEl = document.querySelector('overflow-menu');
 
       suite('<overflow-menu>', function() {
@@ -36,7 +40,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         });
 
         test('defines the target', function() {
-          assert.equal(myEl.target, document.querySelector("#someId").id);
+          assert.equal(myEl.target, document.querySelector("#someId"));
         });
 
         test('Check for positiong', function() {

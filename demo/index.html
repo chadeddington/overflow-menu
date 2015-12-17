@@ -34,7 +34,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <button id="rightButton" onclick="toggleRight()">Toggle Right Menu</button>
     </div>
 
-    <overflow-menu id='leftMenu' target='leftButton' drop-position='left'>   
+    <overflow-menu id='leftMenu' drop-position='left'>   
       <ul>
         <li><p>Item 1</p></li>
         <li><p>Item 2</p></li>
@@ -42,7 +42,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </ul>
     </overflow-menu>
     
-    <overflow-menu id='rightMenu' target='rightButton' drop-position='right'>   
+    <overflow-menu id='rightMenu' drop-position='right'>   
       <ul>
         <li><p>Item 1</p></li>
         <li><p>Item 2</p></li>
@@ -52,6 +52,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
     <script>
+      (function() {
+        var btn1 = document.querySelector('#leftButton');
+        var btn2 = document.querySelector('#rightButton');
+        document.querySelector('#leftMenu').target = btn1;
+        document.querySelector('#rightMenu').target = btn2;
+      })();
+
       var toggleLeft = function() {
         console.log(document.querySelector('#leftButton'));
         document.getElementById('leftMenu').toggleAttribute('hide-menu');
@@ -60,6 +67,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         console.log(document.querySelector('#rightButton'));
         document.getElementById('rightMenu').toggleAttribute('hide-menu');
       }
+
+ 
+      
     </script>
 
   </body>
