@@ -1,0 +1,66 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>overflow-menu Demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../overflow-menu.html">
+    <style>
+      button {
+        padding: 10px;
+      }
+      .container {
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body unresolved>
+
+    <p>An example of <code>&lt;overflow-menu&gt;</code>:</p>
+
+    <div class="container">
+      <button id='leftButton' onclick="toggleLeft()">Toggle Left Menu</button>
+      <button id="rightButton" onclick="toggleRight()">Toggle Right Menu</button>
+    </div>
+
+    <overflow-menu id='leftMenu' target='leftButton' drop-position='left'>   
+      <ul>
+        <li><p>Item 1</p></li>
+        <li><p>Item 2</p></li>
+        <li><p>Item 3</p></li>
+      </ul>
+    </overflow-menu>
+    
+    <overflow-menu id='rightMenu' target='rightButton' drop-position='right'>   
+      <ul>
+        <li><p>Item 1</p></li>
+        <li><p>Item 2</p></li>
+        <li><p>Item 3</p></li>
+      </ul>
+    </overflow-menu>
+
+
+    <script>
+      var toggleLeft = function() {
+        console.log(document.querySelector('#leftButton'));
+        document.getElementById('leftMenu').toggleAttribute('hide-menu');
+      }
+      var toggleRight = function() {
+        console.log(document.querySelector('#rightButton'));
+        document.getElementById('rightMenu').toggleAttribute('hide-menu');
+      }
+    </script>
+
+  </body>
+</html>
