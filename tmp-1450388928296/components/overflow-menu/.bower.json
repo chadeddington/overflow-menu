@@ -1,0 +1,36 @@
+{
+  "name": "overflow-menu",
+  "authors": [
+    "Anonymous <anonymous@example.com>"
+  ],
+  "description": "An element providing a solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "seed"
+  ],
+  "main": "overflow-menu.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/<USERNAME>/seed-element/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  },
+  "_release": "da1b13d4b9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "da1b13d4b9386f4c2a9b03ff39443f3837a85336"
+  },
+  "_source": "git://github.com/chadeddington/overflow-menu.git",
+  "_target": "master",
+  "_originalSource": "chadeddington/overflow-menu",
+  "_direct": true
+}
