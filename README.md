@@ -2,6 +2,8 @@
 
 An element providing a drop-down overflow menu. To position the overflow menu it will need to have a target element set to it's target property.
 
+Sample at http://chadeddington.github.io/overflow-menu/sample/components/overflow-menu/ 
+
 
 ## Dependencies
 
