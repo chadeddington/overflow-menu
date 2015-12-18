@@ -31,7 +31,7 @@ Example:
   <link rel="import" type="css" href="overflow-menu.css">
 
   <template>
-    <div id='contentDiv' class='overflow-menu left-actions-menu' hidden='[[hideMenu]]'>
+    <div id='contentDiv' class='overflow-menu left-actions-menu'>
       <content></content>
     </div>
   </template>
@@ -45,14 +45,6 @@ Example:
     is: 'overflow-menu',
 
     properties: {
-
-      /**
-       * `hideMenu` indicates that the element should be hidden
-       */
-      hideMenu: {
-        type: Boolean,
-        value: false
-      },
 
       /**
        * `target` the element that the overflow-menu should
